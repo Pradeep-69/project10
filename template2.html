@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparto Integrated Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            padding: 20px;
+            gap: 5px;
+        }
+
+        .logo {
+            background-color: #aaa3d0;
+            color: white;
+            padding: 30px;
+            width: 30%;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 3px;
+        }
+
+        nav {
+            background-color: #e9eeec;
+            width: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        nav a {
+            padding: 15px 20px;
+            background-color: white;
+            margin: 10px 5px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+
+        nav a.active {
+            background-color: #d3b1ab;
+            color: white;
+        }
+
+        nav a:hover {
+            background-color: #d3b1ab;
+            color: white;
+        }
+
+        .main-section {
+            display: flex;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            padding: 0 20px;
+            gap: 20px;
+        }
+
+        .main-section img {
+            width: 700px;
+            height: 500px;
+            margin-right: 5px;
+        }
+
+        .content-box {
+            width: 50%;
+            background-color: #f0f4f3;
+            padding: 20px;
+        }
+
+        .content-box h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .content-box p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .content-box button {
+            padding: 10px 20px;
+            background-color: #d3b1ab;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .features-section {
+            background-color: #a39ddc;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .feature-box {
+            flex: 1;
+            min-width: 200px;
+            color: white;
+        }
+
+        .icon {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .container {
+            max-width:1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .left-column {
+            flex: 2;
+            padding: 20px;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .quote-box {
+            background-color: #ddd;
+            padding: 32px 28px;
+            font-style: italic;
+            color: #333;
+            font-size: 15px;
+            line-height: 1.9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 320px;
+        }
+
+        .button-wrapper {
+            margin-top: 0px;
+        }
+
+        .read-more-btn {
+            margin-top: 20px;
+            background-color: #444;
+            color: white;
+            padding: 10px 24px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .right-column {
+            flex: 1;
+            min-width: 400px;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .right-column img {
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+            margin: 10px;
+        }
+
+        #services.container {
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        #services .left-column {
+            width: 45%; 
+        }
+
+        #services .right-column {
+            width: 45%; 
+        }
+
+        #services .right-column img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #services .content-box {
+            margin-bottom: 30px;
+            width: 60%;
+            background-color: #F2F2F2;
+        }
+
+        #services .content-box h2 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+            width: 80%;
+        }
+
+        #services .content-box p {
+            font-size: 1em;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        #services .content-box .subtext {
+            color: #777;
+            font-style: italic;
+        }
+
+        #services .quote-box {
+            background-color: #D9D9D9;
+            padding: 20px;
+            border-radius: 4px  ;
+            width:60%;
+        }
+
+        #services .quote-box p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        #services .button-wrapper {
+            text-align: left;
+        }
+
+        #services .read-more-btn {
+            background-color: #454a50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        #services .read-more-btn:hover {
+            background-color: grey;
+        }
+
+        #services .right-column img {
+            width:130%;
+            margin-left: -30%;
+        }
+
+       
+        @media (max-width: 768px) {
+            #services.container {
+                flex-direction: column;
+                align-items: stretch; 
+            }
+
+            #services .left-column,
+            #services .right-column {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            #services .content-box {
+                margin-bottom: 20px;
+            }
+        }.gallery-section {
+            background-color: #a4d3f4;
+            padding: 30px 0px;
+            margin-top: 0px;
+        }
+
+        .gallery-header {
+            text-align: right;
+            margin-bottom: 20px;
+            padding-right:30px;
+        }
+
+        .gallery-header h2 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            
+        }
+
+     .filters {
+         text-align: center;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .filters span {
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);  
+      gap: 25px;
+      padding: 30px;
+      background-color: white;
+      justify-items: center;
+    }
+
+ .gallery-grid img {
+ width: 100%;           
+ object-fit: cover;
+ border-radius: 5px;
+}
+ .contact-us-section {
+     background-color: #a3d6a3;
+     padding: 30px 0px;
+     margin-top: 40px;
+ }
+
+ .contact-header h2 {
+      color: white;
+    margin-bottom: 30px;
+    text-align:center;
+ }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 30px;
+            background-color: white;
+            justify-content: center;
+        }
+
+        .contact-map,
+        .contact-form,
+        .contact-info {
+            background-color: white;
+            padding: 30px;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-map  
+        {   background-color: white;
+            padding: 1px;
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+            margin-right: 5px;
+            margin-left: 0%;
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 370px;
+
+            border: 0;
+            border-radius: 4px;
+        }
+        .contact-form {
+        background-color: #f2f2f2;
+        padding: 20px;
+        
+        min-width: 300px;
+        border-radius: 5px;
+        text-align: left;
+        margin-right: 20px;
+        }
+
+        .contact-form form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        }   
+
+        .form-group {
+        margin-bottom: 0;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #ddd;
+        }
+         .contact-form input,
+    .contact-form textarea {
+        border: none;
+        border-bottom: 1px solid #333;
+        padding: 8px 0;
+        font-size: 16px;
+        background: transparent;
+        border-radius: 0;
+        width: 100%;
+        margin: 10px 0;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        outline: none;
+        border-bottom: 2px solid #d3b1ab;
+    }
+
+    .contact-form textarea {
+        min-height: 100px;
+    }
+
+
+         .button-container {
+        grid-column: 1 / 3; 
+        display: flex;
+        justify-content: flex-end; 
+        padding-top: 15px; 
+        }
+
+        .contact-form button {
+        background-color: #a3d6a3;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 14px;
+        width: fit-content;
+        justify-content: flex-end;
+        }
+
+        .contact-info {
+            background-color: #f2f2f2;
+            text-align: left;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #333;
+            margin-left:0%;
+            
+        }
+
+        .contact-info p {
+            margin-bottom: 16px;
+        }
+       
+
+     html {
+            scroll-behavior: smooth;
+        }
+
+        
+        .footer-image-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9; 
+        }
+
+        .footer-image-container img {
+            max-width: 100%; 
+            height: auto;
+        }
+
+        .social-icons-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .social-icons-container img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-icons-container img:hover {
+            opacity: 1;
+        }
+
+        .copyright-text {
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+         @media (max-width: 480px) {
+            .main-section img {
+                width: 100%;
+            }
+
+            nav a {
+                font-size: 12px;
+                padding: 10px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            .contact-info {
+                font-size: 12px;
+            }
+
+            .footer-image-container {
+                padding: 10px;
+            }
+
+            .social-icons-container img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+
+            .logo {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .main-section {
+                flex-direction: column;
+            }
+
+            .content-box {
+                width: 100%;
+            }
+
+            .features-container {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .right-column img {
+                width: 100%;
+                height: auto;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-map, .contact-form, .contact-info {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .main-section img {
+                max-width: 100%;
+                margin: 0;
+            }
+            .content-box {
+                width: 100%;
+                max-width: 100%;
+            }
+            #services.container {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 20px;
+            }
+            #services .left-column, #services .right-column {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">COMPARTO</div>
+        <nav>
+            <a href="#about" class="active">.01<br>About</a>
+            <a href="#services">.02<br>Services</a>
+            <a href="#gallery">.03<br>Gallery</a>
+            <a href="#contact">.04<br>Contact</a>
+        </nav>
+    </header>
+
+    <section id="about" class="main-section">
+        <img src="./img1.jpg" alt="Main">
+        <div class="content-box">
+            <h2>.01 Comparto CSS Layout</h2>
+            <p>Comparto is a custom light-weight CSS layout for your website. You can easily adapt and use this for your commercial or personal websites. Feel free to use it.</p>
+            <p>You cannot redistribute this template ZIP file in any template collection website. Please contact TemplateMo if you have any question.</p>
+            <p>Nunc sed gravida elit. Curabitur rutrum elit id lobortis viverra. Fusce at libero dui.</p>
+            <button>More Detail</button>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="features-container">
+            <div class="feature-box">
+                <i class="icon">🏛</i>
+                <p>Aenean vel est id massa condimentum</p>
+            </div>
+            <div class="feature-box">
+                <i class="icon">📊</i>
+                <p>Suspendisse interdum lectus purus</p>
+            </div>
+            <div class="feature-box">
+                <i class="icon">📷</i>
+                <p>Nulla ac sodales est vel iaculis purus</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="services" class="container">
+        <div class="left-column">
+            <div class="content-box">
+                <h2>.02 Aliquam pretium hendrerit</h2>
+                <p>Cras tempus, velit amet facilisis venenatis, erat felis imperdiet lectus, at posuere elit metus.</p>
+                <p class="subtext">Nam iaculis, urna ut laoreet aliquam, massa magna dapibus.</p>
+            </div>
+            <div class="quote-box">
+                <p>Nam iaculis, urna ut laoreet aliquam, massa magna dapibus nibh, at pellentesque lectus odio non risus. Nulla ac sodales est, vel iaculis.</p>
+                <div class="button-wrapper">
+                    <button class="read-more-btn">Read More</button>
+                </div>
+            </div>
+        </div>
+        <div class="right-column">
+            <img src="./img2.jpg" alt="Woman working on laptop" />
+        </div>
+    </div>
+
+
+    <section id="gallery" class="gallery-section">
+        <div class="gallery-header">
+            <h2>.03 The Gallery Section</h2>
+            <div class="filters">
+                <span>Show All</span> .
+                <span>Nature</span> .
+                <span>Animals</span> .
+                <span>People</span>
+            </div>
+        </div>
+
+ <div class="gallery-grid">
+            <img src="./gallery-item-01.jpg">
+            <img src="./gallery-item-02.jpg">
+            <img src="./gallery-item-03.jpg">
+            <img src="./gallery-item-04.jpg">
+            <img src="./gallery-item-05.jpg">
+            <img src="./gallery-item-06.jpg">
+            <img src="./gallery-item-07.jpg">
+            <img src="./gallery-item-08.jpg">
+            <img src="./gallery-item-09.jpg">
+            <img src="./gallery-item-10.jpg">
+        </div>
+    </section>
+
+    <section id="contact" class="contact-us-section">
+        <div class="contact-header">
+            <h2>.04 Contact Us</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps?q=Rio%20de%20Janeiro&output=embed" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Name" required />
+                    <input type="email" placeholder="Email" required />
+                    <textarea placeholder="Message..." required></textarea>
+                    <div class="button-container">
+                    <button type="submit" class="send-button">Send</button>
+                    </div>
+                </form>
+            </div>
+            <div class="contact-info">
+                <p>Pellentesque egestas odio<br>sed tellus dictum, vel lobortis<br>ante vehicula.</p>
+                <p>Morbi eget accumsan libero,<br>non tincidunt felis.</p>
+                <p><strong>Tel:</strong> 010-020-0990<br>
+                <strong>Email:</strong> info@company.com</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-image-container">
+        <div class="social-icons-container">
+            <img src="./facebook.png" alt="Facebook">
+            <img src="./youtube.png" alt="Youtube">
+            <img src="./linkedin.png" alt="LinkedIn">
+            <img src="./twitter.png" alt="Twitter">
+        </div>
+        <p class="copyright-text">Copyright © 2024 Comparto Studio • Design: TemplateMo</p>
+    </footer>
+
+</body>
+</html>
